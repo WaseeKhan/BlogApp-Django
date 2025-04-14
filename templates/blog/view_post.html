@@ -9,7 +9,7 @@
     <meta name="generator" content="Hugo 0.84.0">
     <title>Blog - Home</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/blog/">
-
+    <link rel="shortcut icon" href="/media/blog/images/logo.png/" type="image/x-icon">
     <!-- Bootstrap core CSS -->
 <link href="{% static 'css/Bootstrap.min.css' %}" rel="stylesheet">
 
@@ -57,7 +57,7 @@
         <h2 class="blog-post-title"><a href="{{ post.get_absolute_url }}"> {{post.title}}</a></h2>
         <p class="blog-post-meta">{{post.publish_date}}<a href="#">{{post.author}}</a></p>
 
-        <p>{{post.content}}</p>
+        <p>{{post.content | safe}}</p>
         <hr>
         <p>{{post.excerpt}}</p>
         <h2>Blockquotes</h2>

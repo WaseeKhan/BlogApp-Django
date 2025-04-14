@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Category, Tag, Post, Comment
+from ckeditor.widgets import CKEditorWidget
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):

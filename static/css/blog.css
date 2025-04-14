@@ -91,12 +91,18 @@ h1, h2, h3, h4, h5, h6 {
   
   
 }
+.blog-post a{
+
+  text-decoration: none;
+
+}
 .blog-post-title {
   margin-bottom: .25rem;
   font-size: 1.80rem;
   text-decoration: none;
   
 }
+
 
 .blog-post-meta {
   margin-bottom: 1.25rem;
@@ -112,10 +118,18 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   background-color: #f9f9f9;
   border-top: .05rem solid #e5e5e5;
+  text-decoration: none;
+}
+.blog-footer a{
+
+  text-decoration: none;
 }
 .blog-footer p:last-child {
   margin-bottom: 0;
+  text-decoration: none;
 }
+
+
 
 /* Removed underline from menu links  */
 .link-secondary{
