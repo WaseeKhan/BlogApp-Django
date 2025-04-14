@@ -51,6 +51,7 @@ class Post(models.Model):
     featured_image = models.ImageField(upload_to='blog/images/%Y/%m/%d/',blank=True, null=True,
                                         help_text="Upload a featured image for this post (recommended size: 1200x630px),", 
                                         default='blog/images/default_post_image.webp' )
+    featured = models.BooleanField(default=False)
     categories = models.ManyToManyField(Category, related_name='posts')
     tags = models.ManyToManyField(Tag, related_name='posts', blank=True)
     view_count = models.PositiveIntegerField(default=0)
@@ -62,11 +63,13 @@ class Post(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('blog:post_detail', args=[
-            self.publish_date.year,
-            self.publish_date.month,
-            self.publish_date.day,
-            self.slug
+        return reverse('blog:post_detail', 
+                       args=[
+                            self.publish_date.year,
+                            self.publish_date.month,
+                            self.publish_date.day,
+                            self.slug,
+            
         ])
 
     def save(self, *args, **kwargs):

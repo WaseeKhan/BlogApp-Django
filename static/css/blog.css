@@ -77,13 +77,17 @@ h1, h2, h3, h4, h5, h6 {
 /*
  * Blog posts
  */
-.blog-post {
+.blog-post{
   margin-bottom: 4rem;
+  text-decoration: none;
+  
 }
 .blog-post-title {
   margin-bottom: .25rem;
   font-size: 2.5rem;
+  text-decoration: none;
 }
+
 .blog-post-meta {
   margin-bottom: 1.25rem;
   color: #727272;
@@ -106,5 +110,4 @@ h1, h2, h3, h4, h5, h6 {
 /* Removed underline from menu links  */
 .link-secondary{
   text-decoration: none;
-  
 }
