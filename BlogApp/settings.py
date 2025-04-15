@@ -84,11 +84,17 @@ WSGI_APPLICATION = 'BlogApp.wsgi.application'
 # }
 
 # for Prod
+DATABASE_URL = os.getenv('DATABASE_URL')
+if DATABASE_URL and 'internal' in DATABASE_URL:
+    DATABASE_URL = DATABASE_URL.replace('internal', 'public')
+
 DATABASES = {
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    'default': dj_database_url.config(
+        default=DATABASE_URL,
+        conn_max_age=600,
+        ssl_require=True
+    )
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
